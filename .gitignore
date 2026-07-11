@@ -1,0 +1,15 @@
+# --- Design-tool export leftovers (kept locally, not part of the live site) ---
+support.js
+*.dc.html
+.thumbnail
+/assets/
+/uploads/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+*.log
+
+# --- Tooling ---
+node_modules/
+.vercel

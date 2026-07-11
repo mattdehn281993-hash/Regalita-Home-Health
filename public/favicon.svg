@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#26241F"/>
+  <circle cx="32" cy="33" r="21" fill="none" stroke="#C29A4B" stroke-width="1.4" stroke-dasharray="2 3.2"/>
+  <text x="32" y="45" font-size="34" text-anchor="middle" fill="#C29A4B" font-family="Georgia, 'Times New Roman', serif">⚜</text>
+</svg>
