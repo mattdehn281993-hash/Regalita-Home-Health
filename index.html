@@ -134,6 +134,10 @@
     .editorial-band{min-height:38vh !important;}
     .editorial-photo{object-position:50% 28% !important;}
 
+    /* AZ county map: at full mobile column width it was rendering small and
+       washed out — go bigger and add more shadow so it reads clearly. */
+    .az-map{max-width:100% !important;filter:drop-shadow(0 10px 24px rgba(13,27,42,0.28)) !important;}
+
     /* Hero on mobile: stack image above, text below — instead of the
        full-bleed background + side shade used on wider screens — with a
        top-to-bottom gradient blending the image into the text block. */
@@ -323,7 +327,7 @@
 
   <!-- ============ COVERAGE ============ -->
   <section id="coverage" style="background:#FFFFFF;border-top:1px solid rgba(13,27,42,0.10);border-bottom:1px solid rgba(13,27,42,0.10);">
-    <div class="sec-grid" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,110px) 28px;display:grid;grid-template-columns:1.1fr 0.7fr 0.9fr;gap:clamp(24px,4vw,40px);align-items:start;">
+    <div class="sec-grid" style="max-width:1200px;margin:0 auto;padding:clamp(64px,9vw,110px) 28px;display:grid;grid-template-columns:0.85fr 1.2fr 0.85fr;gap:clamp(24px,4vw,40px);align-items:center;">
       <div data-reveal="left">
         <span style="display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#97741C;font-weight:700;margin-bottom:16px;">Coverage</span>
         <h2 style="font-family:'Playfair Display',serif;font-weight:500;color:#0D1B2A;font-size:clamp(26px,3.2vw,38px);line-height:1.15;letter-spacing:-.3px;margin:0 0 22px;">Our Arizona Service Areas</h2>
@@ -334,7 +338,7 @@
         </div>
       </div>
       <div data-reveal style="transition-delay:.1s;display:flex;align-items:center;justify-content:center;">
-        <img src="media/arizona-map.png" alt="Map of Arizona with Maricopa, Pinal, and Pima counties highlighted as Regalita's service area" style="width:100%;max-width:280px;height:auto;">
+        <img class="az-map" src="media/arizona-map.png" alt="Map of Arizona with Maricopa, Pinal, and Pima counties highlighted as Regalita's service area" style="width:100%;max-width:460px;height:auto;filter:drop-shadow(0 8px 20px rgba(13,27,42,0.18));">
       </div>
       <div data-reveal="right" style="transition-delay:.16s;background:#FDFBF7;border:1px solid rgba(13,27,42,0.14);border-radius:12px;padding:28px 26px;">
         <h3 style="font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:#0D1B2A;margin:0 0 16px;">Differentiators</h3>
