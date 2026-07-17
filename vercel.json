@@ -4,13 +4,13 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/public/hero.mp4",
+      "source": "/media/hero.mp4",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
-      "source": "/public/(.*)",
+      "source": "/media/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]

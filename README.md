@@ -1,26 +1,31 @@
 # Regalita Home Health — Website
 
-Marketing site for **Regalita Home Health Service LLC** (Chandler, AZ & the East Valley).
-A single-page, static site — warm sage / gold / cream palette, serif headlines, gentle
-scroll animations. Built to serve two audiences at once: **families** seeking in-home care
-and **referral partners** (hospitals, discharge planners, agencies).
-
-Design brief: [`docs/PRD.md`](docs/PRD.md).
+Marketing site for **Regalita Home Health Services LLC** (Gilbert, AZ & the East Valley).
+A single-page, static site — navy / champagne-gold / warm-teal palette, Playfair Display
+headlines, gentle scroll animations. Built to serve two audiences at once: **families**
+seeking in-home care and **referral partners** (hospitals, discharge planners, agencies).
 
 ## Stack
 
 Plain **HTML + CSS + vanilla JS** — no framework, no build step. It deploys to any static
-host as-is. (Originally exported from a design tool that depended on a React runtime; that
-dependency has been removed so the site runs standalone.)
+host as-is.
 
 ```
 index.html        ← the whole site
-public/
-  hero.mp4        ← hero background video  ← REPLACE with the final animation
-  favicon.svg     ← fleur-de-lis brand mark favicon
+media/
+  hero.mp4        ← hero background video (desktop)
+  hero-family.jpg ← hero photo (mobile, replaces the video below 820px)
+  logo.png        ← transparent brand mark
+  arizona-map.gif ← Coverage section reference map
+  favicon.svg
 vercel.json       ← caching + clean URLs for Vercel
-docs/PRD.md       ← product requirements
 ```
+
+> **Note:** the assets folder is named `media/`, not `public/`. Several static-site presets
+> (Vercel included) auto-detect a folder literally named `public` as the build **Output
+> Directory** — since this project has no build step and `index.html` lives at the repo
+> root, that misdetection causes a 404 on deploy. Keep it as `media/` (or update Vercel's
+> Project Settings → Output Directory to blank/root if you ever rename it back).
 
 ## Run locally
 
@@ -35,29 +40,28 @@ python -m http.server 8000
 
 1. Push this folder to a GitHub repo.
 2. In Vercel → **Add New → Project** → import the repo.
-3. Framework preset: **Other** (it's a static site — no build command, no output dir).
-4. Deploy. `vercel.json` handles clean URLs and video caching.
+3. Framework preset: **Other** (static site — no build command). Leave **Output Directory**
+   blank/root — don't let it auto-select `media/` or anything else.
+4. Deploy. `vercel.json` handles clean URLs and media caching.
 
 Or from the CLI: `npm i -g vercel && vercel` (then `vercel --prod`).
 
 ## Before launch — checklist
 
-Placeholders intentionally left in (per the PRD, real figures/photos come from the client):
-
-- [ ] **Hero video** — drop the final animation in as `public/hero.mp4`.
-- [ ] **Photos** — replace the two hatched placeholder blocks (About founder/team photo,
-      Partners coordination photo) with real natural-light photography.
-- [ ] **Trust-bar stats** — confirm real numbers, then set `STATS_LIVE = true` in the
-      `<script>` at the bottom of `index.html` to enable the count-up animation.
+- [ ] **Trust-bar / stats** — the badges under the header ("Licensing in Progress,"
+      "Pursuing Joint Commission Accreditation," "We Accept All Insurances") auto-hide a
+      few seconds after load; confirm this is still accurate once real licensure status
+      changes.
 - [ ] **Testimonials** — swap the three sample quotes for real client voices.
 - [ ] **Contact form** — currently shows a front-end "thank you" only; it does **not** send
       anywhere yet. Wire it to a real endpoint (e.g. [Formspree](https://formspree.io),
       Netlify Forms, or a small serverless function) before launch.
-- [ ] **Map** — the contact "map" block links out to Google Maps; embed a real map iframe
-      if a richer view is wanted.
+- [ ] **Logo source file** — confirm `media/logo.png` (background removed via script) is an
+      acceptable stand-in, or swap in an original transparent export if the client has one.
 
 ## Notes
 
-- Fully responsive (mobile breakpoints at 820px / 560px); nav collapses on small screens.
+- Fully responsive; mobile hero switches from video to a static photo (video crops badly on
+  tall phone screens) and restructures to an image-above/text-below stacked layout.
 - Respects `prefers-reduced-motion` — all content is readable with animations disabled.
-- Contact: (480) 590-0357 · zionpalace01@gmail.com · 3306 E Bluejay Drive, Chandler, AZ 85286
+- Contact: (602) 686-7878 · admissions@regalitahomehealth.com · 1805 E Mia Ln, Gilbert, AZ 85298
